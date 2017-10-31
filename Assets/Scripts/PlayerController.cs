@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float horizontalSpeed = 10f;
+	public float jumpSpeed = 600f; 
 	Rigidbody2D rb; 
 
 	// Use this for initialization
@@ -22,6 +23,9 @@ public class PlayerController : MonoBehaviour {
 		else {
 			StopMovingHorizontal(); 
 		}
+		if (Input.GetButtonDown("Jump")) {
+			Jump(); 
+		}
 	}
 
 	void MoveHorizontal(float speed) {
@@ -31,4 +35,10 @@ public class PlayerController : MonoBehaviour {
 	void StopMovingHorizontal() {
 		rb.velocity = new Vector2(0f, rb.velocity.y);
 	} 
+
+	void Jump() {
+		rb.AddForce(new Vector2(0f, jumpSpeed));
+
+	}
 } 
+ 
