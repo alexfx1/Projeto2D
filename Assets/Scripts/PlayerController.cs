@@ -105,6 +105,12 @@ public class PlayerController : MonoBehaviour {
         if(other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
             isJumping = false; 
         }
-    } 
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Coin")) {
+            Destroy(other.gameObject);
+        }
+    }
 } 
  
