@@ -42,18 +42,23 @@ public class GM : MonoBehaviour {
         }
         DisplayHudData(); 
 	}
+
+    void DisplayHudData() {
+        ui.hud.txtCoinCount.text = "x " + data.coinCount;
+    }
+
+    public void IncrementCoinCount() {
+        data.coinCount++;
+    }
+
     public void RespawnPlayer() {
         Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation); 
     }
 
 
-    void DisplayHudData() {
-        ui.hud.txtCoinCount.text = "x " + data.coinCount;
-    } 
+   
 
-    public void IncrementCoinCount() {
-        data.coinCount++; 
-    }
+
 
 
     public void KillPlayer() {
