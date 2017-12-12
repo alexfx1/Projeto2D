@@ -16,7 +16,7 @@ public class MonsterController : MonoBehaviour
     }
 
     void Update() {
-        if (transform.position.y < GM.instance.yLive)
+        if (transform.position.y < GM.instance.yMinLive)
         {
             Destroy(gameObject);
         }
